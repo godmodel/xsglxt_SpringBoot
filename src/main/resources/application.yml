@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/xsglxt_db?characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  freemarker:
+    template-loader-path: classpath:templates/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+#下面这些内容是为了让MyBatis映射
+#指定Mybatis的Mapper文件
+mybatis:
+  mapper-locations: classpath:mappers/*xml
+ #指定Mybatis的实体目录
+  type-aliases-package: com.ma.xsglxt_springboot.mybatis.entity
+
+# 应用服务 WEB 访问端口
+server:
+  port: 9090
+
+#mybatis-plus在控制台输入语句
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#文件相关
+files:
+  upload:
+    path: D:/SpringBoot_Vue_xsglxt/files/
